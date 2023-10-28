@@ -12,7 +12,7 @@ const Ellipse = () => {
         cy="7"
         r="6.5"
         stroke="#94989E"
-        stroke-linejoin="round"
+        strokeLinejoin="round"
         strokeDasharray="2 2"
       />
     </svg>

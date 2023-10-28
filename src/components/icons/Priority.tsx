@@ -13,7 +13,7 @@ const Priority: FC<PriorityProps> = ({ strokeColor }) => {
       viewBox="0 0 16 16"
       fill="none"
     >
-      <g clip-path="url(#clip0_1_49)">
+      <g clipPath="url(#clip0_1_49)">
         <path
           d="M3.33331 9.33334H12.6666V3.33334H3.33331V14"
           stroke={strokeColor ?? "#94989E"}

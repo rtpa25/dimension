@@ -7,55 +7,55 @@ const Heading = () => {
       viewBox="0 0 18 18"
       fill="none"
     >
-      <g clip-path="url(#clip0_1_129)">
+      <g clipPath="url(#clip0_1_129)">
         <path
           d="M5.25 9H12.75"
           stroke="#6C6F75"
-          stroke-width="1.25"
-          stroke-linecap="round"
-          stroke-linejoin="round"
+          strokeWidth="1.25"
+          strokeLinecap="round"
+          strokeLinejoin="round"
         />
         <path
           d="M5.25 3.75V14.25"
           stroke="#6C6F75"
-          stroke-width="1.25"
-          stroke-linecap="round"
-          stroke-linejoin="round"
+          strokeWidth="1.25"
+          strokeLinecap="round"
+          strokeLinejoin="round"
         />
         <path
           d="M12.75 3.75V14.25"
           stroke="#6C6F75"
-          stroke-width="1.25"
-          stroke-linecap="round"
-          stroke-linejoin="round"
+          strokeWidth="1.25"
+          strokeLinecap="round"
+          strokeLinejoin="round"
         />
         <path
           d="M11.25 14.25H14.25"
           stroke="#6C6F75"
-          stroke-width="1.25"
-          stroke-linecap="round"
-          stroke-linejoin="round"
+          strokeWidth="1.25"
+          strokeLinecap="round"
+          strokeLinejoin="round"
         />
         <path
           d="M11.25 3.75H14.25"
           stroke="#6C6F75"
-          stroke-width="1.25"
-          stroke-linecap="round"
-          stroke-linejoin="round"
+          strokeWidth="1.25"
+          strokeLinecap="round"
+          strokeLinejoin="round"
         />
         <path
           d="M3.75 14.25H6.75"
           stroke="#6C6F75"
-          stroke-width="1.25"
-          stroke-linecap="round"
-          stroke-linejoin="round"
+          strokeWidth="1.25"
+          strokeLinecap="round"
+          strokeLinejoin="round"
         />
         <path
           d="M3.75 3.75H6.75"
           stroke="#6C6F75"
-          stroke-width="1.25"
-          stroke-linecap="round"
-          stroke-linejoin="round"
+          strokeWidth="1.25"
+          strokeLinecap="round"
+          strokeLinejoin="round"
         />
       </g>
       <defs>

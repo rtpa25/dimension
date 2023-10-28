@@ -1,9 +1,12 @@
 import { useAutoAnimate } from "@formkit/auto-animate/react";
 import { fetchEventSource } from "@microsoft/fetch-event-source";
 import { EditorContent } from "@tiptap/react";
+import { TRPCError } from "@trpc/server";
 import { Loader2 } from "lucide-react";
+import Link from "next/link";
 import { useRef, useState } from "react";
 import { useForm } from "react-hook-form";
+import toast from "react-hot-toast";
 import {
   AI,
   ChevronRight,
@@ -19,6 +22,7 @@ import { Textarea } from "~/components/ui/textarea";
 import useAutosizeTextArea from "~/hooks/useAutoResizeTextArea";
 import { useTextEditor } from "~/hooks/useTextEditor";
 import { getTagIcons } from "~/lib/ui-helper";
+import { cn } from "~/lib/utils";
 import { api } from "~/utils/api";
 import {
   type Priority as PriorityEnum,
@@ -33,10 +37,6 @@ import PrioritySelector from "./PrioritySelector";
 import ProjectSelector from "./ProjectSelector";
 import StatusSelector from "./StatusSelector";
 import TagsSelector from "./TagsSelector";
-import toast from "react-hot-toast";
-import { TRPCError } from "@trpc/server";
-import Link from "next/link";
-import { cn } from "~/lib/utils";
 
 const ctrl = new AbortController();
 
@@ -184,7 +184,6 @@ export default function AddTaskModal() {
           />
           <EditorContent
             editor={editor}
-            ref={parent}
             className="w-full px-3 py-2 text-sm font-medium focus:outline-none focus:ring-0"
             placeholder="Describe this task..."
           />

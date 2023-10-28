@@ -7,27 +7,27 @@ const Italics = () => {
       viewBox="0 0 18 18"
       fill="none"
     >
-      <g clip-path="url(#clip0_1_142)">
+      <g clipPath="url(#clip0_1_142)">
         <path
           d="M8.25 3.75H12.75"
           stroke="#6C6F75"
-          stroke-width="1.25"
-          stroke-linecap="round"
-          stroke-linejoin="round"
+          strokeWidth="1.25"
+          strokeLinecap="round"
+          strokeLinejoin="round"
         />
         <path
           d="M5.25 14.25H9.75"
           stroke="#6C6F75"
-          stroke-width="1.25"
-          stroke-linecap="round"
-          stroke-linejoin="round"
+          strokeWidth="1.25"
+          strokeLinecap="round"
+          strokeLinejoin="round"
         />
         <path
           d="M10.5 3.75L7.5 14.25"
           stroke="#6C6F75"
-          stroke-width="1.25"
-          stroke-linecap="round"
-          stroke-linejoin="round"
+          strokeWidth="1.25"
+          strokeLinecap="round"
+          strokeLinejoin="round"
         />
       </g>
       <defs>
