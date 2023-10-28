@@ -12,11 +12,14 @@ export const env = createEnv({
       .url()
       .refine(
         (str) => !str.includes("YOUR_MYSQL_URL_HERE"),
-        "You forgot to change the default URL"
+        "You forgot to change the default URL",
       ),
     NODE_ENV: z
       .enum(["development", "test", "production"])
       .default("development"),
+    VERCEL_SECRET_KEY: z.string().min(1),
+    QSTASH_AUTHORIZATION_TOKEN: z.string().min(1),
+    OPENAI_API_KEY: z.string().min(1),
   },
 
   /**
@@ -35,7 +38,10 @@ export const env = createEnv({
   runtimeEnv: {
     DATABASE_URL: process.env.DATABASE_URL,
     NODE_ENV: process.env.NODE_ENV,
+    VERCEL_SECRET_KEY: process.env.VERCEL_SECRET_KEY,
     // NEXT_PUBLIC_CLIENTVAR: process.env.NEXT_PUBLIC_CLIENTVAR,
+    QSTASH_AUTHORIZATION_TOKEN: process.env.QSTASH_AUTHORIZATION_TOKEN,
+    OPENAI_API_KEY: process.env.OPENAI_API_KEY,
   },
   /**
    * Run `build` or `dev` with `SKIP_ENV_VALIDATION` to skip env validation. This is especially
