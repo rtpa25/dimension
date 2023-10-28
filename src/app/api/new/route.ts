@@ -27,9 +27,7 @@ export async function POST(req: NextRequest) {
 
   try {
     const template = `
-    Take this task with title: ${body.taskTitle} and description: ${
-      body.taskDescription
-    }. Now your job is giving me a set of tags that and relevant projects this task can be a part of. You are only allowed to choose between a specified set of tags which are ${Object.values(
+    Take this task with title: {title} and {description}. Now your job is giving me a set of tags that and relevant projects this task can be a part of. You are only allowed to choose between a specified set of tags which are ${Object.values(
       Tag,
     ).join(", ")} and projects which are ${Object.values(Project).join(
       ", ",
@@ -38,19 +36,25 @@ export async function POST(req: NextRequest) {
 
     const prompt = new PromptTemplate({
       template: template,
-      inputVariables: [],
+      inputVariables: ["title", "description"],
     });
     const chain = new LLMChain({ llm: model, prompt: prompt });
 
     chain
-      .call({}, [
+      .call(
         {
-          async handleLLMNewToken(token) {
-            await writer.ready;
-            await writer.write(encoder.encode(`data: ${token}\n\n`));
-          },
+          title: body.taskTitle,
+          description: JSON.stringify(body.taskDescription),
         },
-      ])
+        [
+          {
+            async handleLLMNewToken(token) {
+              await writer.ready;
+              await writer.write(encoder.encode(`data: ${token}\n\n`));
+            },
+          },
+        ],
+      )
       .then((res) => {
         const parsedData: { tags: string[]; projects: string[] } = JSON.parse(
           res.text,

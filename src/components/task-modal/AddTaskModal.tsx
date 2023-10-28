@@ -143,6 +143,7 @@ export default function AddTaskModal() {
       });
       reset();
       editor?.commands.clearContent();
+      toast.success("Task created successfully");
     } catch (error) {
       if (error instanceof TRPCError) {
         toast.error(error.message);
