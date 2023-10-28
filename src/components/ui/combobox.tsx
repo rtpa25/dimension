@@ -58,10 +58,17 @@ const Combobox: React.FC<ComboBoxProps> = ({
             : initialButtonText}
         </Button>
       </PopoverTrigger>
-      <PopoverContent className="w-[200px] p-0">
+      <PopoverContent
+        className="font- w-[200px] p-0"
+        style={{
+          fontFamily: "inherit",
+        }}
+      >
         <Command>
           <CommandInput placeholder="Search Option..." />
-          <CommandEmpty>No Option found.</CommandEmpty>
+          <CommandEmpty>
+            <p className="text-sm text-[#94989E]">No options found</p>
+          </CommandEmpty>
           <CommandGroup>
             {options.map((option) => (
               <CommandItem
@@ -75,7 +82,7 @@ const Combobox: React.FC<ComboBoxProps> = ({
                 {currentMultipleOptions.length > 0 && (
                   <Check
                     className={cn(
-                      "mr-2 h-4 w-4",
+                      "mr-2 h-4 w-4 text-gray-500",
                       currentMultipleOptions.includes(option.value)
                         ? "opacity-100"
                         : "opacity-0",

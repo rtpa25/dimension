@@ -60,6 +60,7 @@ export const taskRouter = createTRPCRouter({
       const tasks = await ctx.db.task.findMany({
         include: {
           tags: true,
+          assignees: true,
         },
       });
       return tasks;

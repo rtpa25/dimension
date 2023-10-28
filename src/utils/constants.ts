@@ -8,9 +8,9 @@ export enum Status {
 
 export enum Priority {
   URGENT = "Urgent",
-  LOW = "Low",
-  MEDIUM = "Medium",
   HIGH = "High",
+  MEDIUM = "Medium",
+  LOW = "Low",
 }
 
 export enum Project {
@@ -23,8 +23,8 @@ export enum Project {
 }
 
 export enum Tag {
-  FEATURE = "Feature",
   BUG = "Bug",
+  FEATURE = "Feature",
   IMPROVEMENT = "Improvement",
   REFACTOR = "Refactor",
   OTHER = "Other",

@@ -1,6 +1,6 @@
 import { Project as ProjectEnum } from "~/utils/constants";
-import { Project } from "./icons";
-import Combobox from "./ui/combobox";
+import { Project } from "../icons";
+import Combobox from "../ui/combobox";
 import { type FC } from "react";
 
 interface ProjectSelectorProps {

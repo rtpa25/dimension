@@ -1,7 +1,7 @@
 import { type FC } from "react";
 import { UserNames } from "~/utils/constants";
-import { Avatar } from "./icons";
-import Combobox from "./ui/combobox";
+import { Avatar } from "../icons";
+import Combobox from "../ui/combobox";
 
 interface AssigneeSelectorProps {
   onSelect: (value: string) => void;

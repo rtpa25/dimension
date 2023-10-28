@@ -1,6 +1,6 @@
 import { type Editor } from "@tiptap/react";
 import { type FC } from "react";
-import { Button } from "./ui/button";
+import { Button } from "../ui/button";
 import {
   Bold,
   Clip,
@@ -12,7 +12,7 @@ import {
   Smiley,
   Tasks,
   UnOrderedList,
-} from "./icons";
+} from "../icons";
 
 interface EditorButtonGroupProps {
   editor: Editor | null;

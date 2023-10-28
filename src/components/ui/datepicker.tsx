@@ -30,7 +30,7 @@ const DatePicker: React.FC<DatePickerProps> = ({ onSetDate }) => {
         >
           <div className="flex items-center gap-1 text-xs font-medium text-[#94989E]">
             <CalendarIcon />
-            {date ? format(date, "PPP") : <span>Pick a date</span>}
+            {date ? format(date, "PPP") : <span>Due Date</span>}
           </div>
         </Button>
       </PopoverTrigger>

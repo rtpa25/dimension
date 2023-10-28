@@ -28,6 +28,8 @@ model Tag {
     name   String
     taskID Int?
     task   Task?  @relation(fields: [taskID], references: [id])
+
+    @@index([taskID])
 }
 
 model User {
@@ -35,4 +37,6 @@ model User {
     name   String
     taskId Int?
     task   Task?  @relation(fields: [taskId], references: [id])
+
+    @@index([taskId])
 }
