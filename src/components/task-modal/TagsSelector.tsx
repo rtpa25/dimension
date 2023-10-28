@@ -18,7 +18,7 @@ const TagsSelector: FC<TagsSelectorProps> = ({ onSelect, value }) => {
           label: (
             <div className="flex items-center gap-1">
               {icon}
-              <p className="text-xs text-[#94989E]">{tag}</p>
+              <p className="text-text-default text-xs">{tag}</p>
             </div>
           ),
           value: tag,
@@ -29,7 +29,7 @@ const TagsSelector: FC<TagsSelectorProps> = ({ onSelect, value }) => {
       initialButtonText={
         <div className="flex items-center gap-1">
           <Tag />
-          <p className="text-xs text-[#94989E]">Tags</p>
+          <p className="text-text-default text-xs">Tags</p>
         </div>
       }
       currentMultipleOptions={value}

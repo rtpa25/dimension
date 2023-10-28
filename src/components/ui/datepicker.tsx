@@ -11,12 +11,11 @@ import {
 import CalendarIcon from "../icons/Calendar";
 
 interface DatePickerProps {
+  currentDate?: Date;
   onSetDate: (date: Date) => void;
 }
 
-const DatePicker: React.FC<DatePickerProps> = ({ onSetDate }) => {
-  const [date, setDate] = React.useState<Date>();
-
+const DatePicker: React.FC<DatePickerProps> = ({ onSetDate, currentDate }) => {
   return (
     <Popover>
       <PopoverTrigger asChild>
@@ -25,21 +24,20 @@ const DatePicker: React.FC<DatePickerProps> = ({ onSetDate }) => {
           size={"sm"}
           className={cn(
             "w-fit justify-between rounded-lg px-3",
-            !date && "text-muted-foreground",
+            !currentDate && "text-muted-foreground",
           )}
         >
-          <div className="flex items-center gap-1 text-xs font-medium text-[#94989E]">
+          <div className="text-text-default flex items-center gap-1 text-xs font-medium">
             <CalendarIcon />
-            {date ? format(date, "PPP") : <span>Due Date</span>}
+            {currentDate ? format(currentDate, "PPP") : <span>Due Date</span>}
           </div>
         </Button>
       </PopoverTrigger>
       <PopoverContent className="w-auto p-0">
         <Calendar
           mode="single"
-          selected={date}
+          selected={currentDate}
           onSelect={(data) => {
-            setDate(data);
             if (data) onSetDate(data);
           }}
           initialFocus

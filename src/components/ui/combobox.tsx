@@ -67,7 +67,7 @@ const Combobox: React.FC<ComboBoxProps> = ({
         <Command>
           <CommandInput placeholder="Search Option..." />
           <CommandEmpty>
-            <p className="text-sm text-[#94989E]">No options found</p>
+            <p className="text-text-default text-sm">No options found</p>
           </CommandEmpty>
           <CommandGroup>
             {options.map((option) => (

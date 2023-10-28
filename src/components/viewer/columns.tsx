@@ -13,7 +13,7 @@ export const columns: ColumnDef<TaskForViewer>[] = [
     header: () => <div className="text-left">ID</div>,
     cell: ({ row }) => {
       return (
-        <div className="text-xs font-medium text-[#94989E]">
+        <div className="text-text-default text-xs font-medium">
           {row.getValue("id")}
         </div>
       );
@@ -24,7 +24,7 @@ export const columns: ColumnDef<TaskForViewer>[] = [
     header: () => <div className="text-left">Title</div>,
     cell: ({ row }) => {
       return (
-        <div className="text-xs font-medium text-[#94989E]">
+        <div className="text-text-default text-xs font-medium">
           {row.getValue("title")}
         </div>
       );
@@ -90,7 +90,7 @@ export const columns: ColumnDef<TaskForViewer>[] = [
     header: () => <div className="text-left">Project</div>,
     cell: ({ row }) => {
       return (
-        <div className="text-xs font-medium text-[#94989E]">
+        <div className="text-text-default text-xs font-medium">
           {row.getValue("project")}
         </div>
       );
@@ -130,7 +130,7 @@ export const columns: ColumnDef<TaskForViewer>[] = [
         year: "numeric",
       });
       return (
-        <div className="w-24 text-xs font-medium text-[#94989E]">
+        <div className="text-text-default w-24 text-xs font-medium">
           {formattedDueDate}
         </div>
       );

@@ -37,7 +37,7 @@ const StatusSelector: FC<StatusSelectorProps> = ({ onSelect, value }) => {
           label: (
             <div className="flex items-center justify-start gap-1">
               {icon}
-              <p className="text-xs text-[#94989E]">{status}</p>
+              <p className="text-text-default text-xs">{status}</p>
             </div>
           ),
           value: status,
@@ -47,7 +47,7 @@ const StatusSelector: FC<StatusSelectorProps> = ({ onSelect, value }) => {
       initialButtonText={
         <div className="flex items-center gap-1">
           <Ellipse />
-          <p className="text-xs text-[#94989E]">Todo</p>
+          <p className="text-text-default text-xs">Todo</p>
         </div>
       }
       currentSingleOption={value}

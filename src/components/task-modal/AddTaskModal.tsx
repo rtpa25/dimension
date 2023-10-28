@@ -72,6 +72,7 @@ export default function AddTaskModal() {
   const watchStatus = watch("status");
 
   useAutosizeTextArea(textAreaRef.current, watchTitle);
+
   const createTaskMutation = api.task.createTask.useMutation();
 
   const [parent] = useAutoAnimate();
@@ -156,7 +157,7 @@ export default function AddTaskModal() {
   return (
     <main className="flex min-h-screen flex-col items-center justify-center gap-6 scrollbar-hide">
       <div
-        className="flex h-auto min-h-[16.9375rem] min-w-[44.875rem] max-w-[50vw] flex-col rounded-[0.625rem] bg-white text-[#6C6F75]"
+        className="flex h-auto min-h-[16.9375rem] min-w-[32rem]  max-w-[50vw] flex-col rounded-[0.625rem] bg-white text-[#6C6F75] md:min-w-[44.875rem]"
         style={{
           boxShadow: "2px 2px 30px 10px rgba(0, 0, 0, 0.20)",
         }}
@@ -172,7 +173,7 @@ export default function AddTaskModal() {
         <div className="inputs mb-5 px-4">
           <Textarea
             placeholder="Task title"
-            className="h-auto max-w-full text-base font-medium placeholder:text-[#94989E]"
+            className="placeholder:text-text-default h-auto max-w-full text-base font-medium"
             ref={textAreaRef}
             value={watchTitle}
             onChange={(e) => {
@@ -213,14 +214,14 @@ export default function AddTaskModal() {
                   className="flex items-center gap-1 rounded-lg border border-dashed px-2 py-1.5"
                 >
                   {icon}
-                  <p className="text-xs text-[#94989E]">{tag}</p>
+                  <p className="text-text-default text-xs">{tag}</p>
                 </div>
               );
             })}
             {watchProject && (
               <div className="flex items-center gap-1 rounded-lg border border-dashed px-2 py-1.5">
                 <Project />
-                <p className="text-xs text-[#94989E]">{watchProject}</p>
+                <p className="text-text-default text-xs">{watchProject}</p>
               </div>
             )}
           </div>
@@ -288,10 +289,11 @@ export default function AddTaskModal() {
                 shouldDirty: true,
               });
             }}
+            currentDate={watch("date")}
           />
         </div>
         <Separator />
-        <div className="my-4 flex items-center justify-between px-7">
+        <div className="my-4 flex flex-wrap items-center justify-between px-7">
           <div className="flex gap-1">
             <EditorButtonGroup editor={editor} />
           </div>

@@ -16,7 +16,7 @@ const AssigneeSelector: FC<AssigneeSelectorProps> = ({ onSelect, value }) => {
           label: (
             <div className="flex items-center gap-1">
               <Avatar />
-              <p className="text-xs text-[#94989E]">{assignee}</p>
+              <p className="text-text-default text-xs">{assignee}</p>
             </div>
           ),
           value: assignee,
@@ -27,7 +27,7 @@ const AssigneeSelector: FC<AssigneeSelectorProps> = ({ onSelect, value }) => {
       initialButtonText={
         <div className="flex items-center gap-1">
           <Avatar />
-          <p className="text-xs text-[#94989E]">Assignee</p>
+          <p className="text-text-default text-xs">Assignee</p>
         </div>
       }
       currentMultipleOptions={value}
