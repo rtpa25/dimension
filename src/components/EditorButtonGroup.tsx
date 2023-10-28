@@ -27,7 +27,13 @@ const EditorButtonGroup: FC<EditorButtonGroupProps> = ({ editor }) => {
       <Button variant={"ghost"} size={"icon"}>
         <Mention />
       </Button>
-      <Button variant={"ghost"} size={"icon"}>
+      <Button
+        variant={"ghost"}
+        size={"icon"}
+        onClick={() => {
+          editor?.chain().focus().insertContent("😀").run();
+        }}
+      >
         <Smiley />
       </Button>
       <Button

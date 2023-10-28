@@ -23,6 +23,8 @@ interface ComboBoxProps {
   }[];
   initialButtonText: React.ReactNode;
   onSelect?: (value: string) => void;
+  currentMultipleOptions?: string[];
+  currentSingleOption?: string;
   isMultiSelect?: boolean;
 }
 
@@ -30,13 +32,11 @@ const Combobox: React.FC<ComboBoxProps> = ({
   initialButtonText,
   options,
   onSelect,
+  currentMultipleOptions = [],
+  currentSingleOption,
   isMultiSelect = false,
 }) => {
   const [open, setOpen] = React.useState(false);
-  const [singleSelectValue, setSingleSelectValue] = React.useState("");
-  const [multiSelectValues, setMultiSelectValues] = React.useState<string[]>(
-    [],
-  );
 
   return (
     <Popover open={open} onOpenChange={setOpen}>
@@ -48,12 +48,13 @@ const Combobox: React.FC<ComboBoxProps> = ({
           aria-expanded={open}
           className="w-fit justify-between rounded-lg px-3"
         >
-          {singleSelectValue
-            ? options.find((option) => option.value === singleSelectValue)
+          {currentSingleOption
+            ? options.find((option) => option.value === currentSingleOption)
                 ?.label
-            : multiSelectValues.length > 0
-            ? options.find((option) => option.value === multiSelectValues[0])
-                ?.label
+            : currentMultipleOptions.length > 0
+            ? options.find(
+                (option) => option.value === currentMultipleOptions[0],
+              )?.label
             : initialButtonText}
         </Button>
       </PopoverTrigger>
@@ -67,35 +68,15 @@ const Combobox: React.FC<ComboBoxProps> = ({
                 key={option.value}
                 value={option.value}
                 onSelect={() => {
-                  if (isMultiSelect) {
-                    if (multiSelectValues.includes(option.value)) {
-                      setMultiSelectValues(
-                        multiSelectValues.filter(
-                          (value) => value !== option.value,
-                        ),
-                      );
-                    } else {
-                      setMultiSelectValues([
-                        ...multiSelectValues,
-                        option.value,
-                      ]);
-                    }
-
-                    onSelect?.(option.value);
-                  } else {
-                    console.log("single select", option.value);
-
-                    setSingleSelectValue(option.value);
-                    onSelect?.(option.value);
-                    setOpen(false);
-                  }
+                  if (!isMultiSelect) setOpen(false);
+                  onSelect?.(option.value);
                 }}
               >
-                {multiSelectValues.length > 0 && (
+                {currentMultipleOptions.length > 0 && (
                   <Check
                     className={cn(
                       "mr-2 h-4 w-4",
-                      multiSelectValues.includes(option.value)
+                      currentMultipleOptions.includes(option.value)
                         ? "opacity-100"
                         : "opacity-0",
                     )}

@@ -13,7 +13,7 @@ const Ellipse = () => {
         r="6.5"
         stroke="#94989E"
         stroke-linejoin="round"
-        stroke-dasharray="2 2"
+        strokeDasharray="2 2"
       />
     </svg>
   );
