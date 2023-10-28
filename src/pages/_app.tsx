@@ -2,7 +2,7 @@ import { type AppType } from "next/app";
 import { api } from "~/utils/api";
 import { Toaster } from "react-hot-toast";
 import "~/styles/globals.css";
-
+import { Analytics } from "@vercel/analytics/react";
 import localFont from "next/font/local";
 
 const gtWalsheim = localFont({
@@ -27,6 +27,7 @@ const MyApp: AppType = ({ Component, pageProps }) => {
       </style>
 
       <main className={`${gtWalsheim.variable} font-sans`}>
+        <Analytics />
         <Component {...pageProps} />
         <Toaster position="bottom-center" toastOptions={{}} />
       </main>
