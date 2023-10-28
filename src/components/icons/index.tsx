@@ -1,3 +1,4 @@
+export { default as AI } from "./AI";
 export { default as Avatar } from "./Avatar";
 export { default as Bold } from "./Bold";
 export { default as Calendar } from "./Calendar";

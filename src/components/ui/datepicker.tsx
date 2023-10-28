@@ -10,7 +10,11 @@ import {
 } from "~/components/ui/popover";
 import CalendarIcon from "../icons/Calendar";
 
-const DatePicker = () => {
+interface DatePickerProps {
+  onSetDate: (date: Date) => void;
+}
+
+const DatePicker: React.FC<DatePickerProps> = ({ onSetDate }) => {
   const [date, setDate] = React.useState<Date>();
 
   return (
@@ -34,7 +38,10 @@ const DatePicker = () => {
         <Calendar
           mode="single"
           selected={date}
-          onSelect={setDate}
+          onSelect={(data) => {
+            setDate(data);
+            if (data) onSetDate(data);
+          }}
           initialFocus
         />
       </PopoverContent>
