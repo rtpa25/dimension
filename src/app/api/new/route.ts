@@ -4,8 +4,6 @@ import { env } from "~/env.mjs";
 import { Project, Tag } from "~/utils/constants";
 
 export const runtime = "edge";
-// This is required to enable streaming
-// export const dynamic = "force-dynamic";
 
 export async function POST(req: NextRequest) {
   const body = await req.json();
