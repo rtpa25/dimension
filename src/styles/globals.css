@@ -135,6 +135,12 @@
     margin: 2rem 0;
   }
 
+  a {
+    color: var(--primary);
+    text-decoration: underline;
+    cursor: pointer;
+  }
+
   ul[data-type="taskList"] {
     list-style: none;
     padding: 0;

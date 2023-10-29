@@ -7,6 +7,7 @@ import Text from "@tiptap/extension-text";
 import { useEditor } from "@tiptap/react";
 import StarterKit from "@tiptap/starter-kit";
 import { SmilieReplacer } from "~/plugins/SmileyReplacer";
+import { Bold } from "@tiptap/extension-bold";
 
 export const useTextEditor = () => {
   const editor = useEditor({
@@ -23,6 +24,11 @@ export const useTextEditor = () => {
       }),
       Placeholder.configure({
         placeholder: "Describe this task",
+      }),
+      Bold.configure({
+        HTMLAttributes: {
+          style: "font-weight: 700;",
+        },
       }),
       LinkExtension.configure({
         openOnClick: true,
