@@ -59,7 +59,7 @@ const Combobox: React.FC<ComboBoxProps> = ({
         </Button>
       </PopoverTrigger>
       <PopoverContent
-        className="font- w-[200px] p-0"
+        className="w-[200px] p-0"
         style={{
           fontFamily: "inherit",
         }}
@@ -67,7 +67,7 @@ const Combobox: React.FC<ComboBoxProps> = ({
         <Command>
           <CommandInput placeholder="Search Option..." />
           <CommandEmpty>
-            <p className="text-text-default text-sm">No options found</p>
+            <p className="text-sm text-text-default">No options found</p>
           </CommandEmpty>
           <CommandGroup>
             {options.map((option) => (

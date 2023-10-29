@@ -169,11 +169,6 @@
   dependencies:
     glob "7.1.7"
 
-"@next/font@^14.0.0":
-  version "14.0.0"
-  resolved "https://registry.yarnpkg.com/@next/font/-/font-14.0.0.tgz#09b7ad4600717dbf622486c52c30ff3bfbb1f47a"
-  integrity sha512-E6Xg6yPYqOIbPmYkheY5qXjeJlDdwWzspU655QbJn+s0FSKOTS3b/SDKXeZxnyK9f2rTaovGRsU/KOCqZQongw==
-
 "@next/swc-darwin-arm64@13.5.6":
   version "13.5.6"
   resolved "https://registry.npmjs.org/@next/swc-darwin-arm64/-/swc-darwin-arm64-13.5.6.tgz"
@@ -438,6 +433,14 @@
   dependencies:
     "@babel/runtime" "^7.13.10"
     "@radix-ui/react-use-layout-effect" "1.0.1"
+
+"@radix-ui/react-label@^2.0.2":
+  version "2.0.2"
+  resolved "https://registry.yarnpkg.com/@radix-ui/react-label/-/react-label-2.0.2.tgz#9c72f1d334aac996fdc27b48a8bdddd82108fb6d"
+  integrity sha512-N5ehvlM7qoTLx7nWPodsPYPgMzA5WM8zZChQg8nyFJKnDO5WHdba1vv5/H6IO5LtJMfD2Q3wh1qHFGNtK0w3bQ==
+  dependencies:
+    "@babel/runtime" "^7.13.10"
+    "@radix-ui/react-primitive" "1.0.3"
 
 "@radix-ui/react-popover@^1.0.7":
   version "1.0.7"
