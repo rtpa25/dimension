@@ -4,6 +4,7 @@ import { DataTable } from "./data-table";
 import { Loader2, ChevronLeft, ChevronRight } from "lucide-react";
 import { useMemo, useState } from "react";
 import { Button } from "../ui/button";
+import { useAutoAnimate } from "@formkit/auto-animate/react";
 
 export default function TaskViewer() {
   const [page, setPage] = useState(1);
@@ -17,19 +18,23 @@ export default function TaskViewer() {
     [data?.netTaskCount],
   );
 
+  const [parent] = useAutoAnimate();
+
   return (
-    <div className="container mx-auto py-10">
-      {data && <DataTable columns={columns} data={data.tasks} />}
-      {isLoading && (
-        <div className="flex min-h-screen items-center justify-center">
-          <Loader2 className="mx-auto animate-spin text-gray-400" size={64} />
-        </div>
-      )}
-      {isError && (
-        <div className="flex min-h-screen items-center justify-center">
-          <p className="text-gray-400">Error</p>
-        </div>
-      )}
+    <>
+      <div className="container mx-auto py-10" ref={parent}>
+        {data && <DataTable columns={columns} data={data.tasks} />}
+        {isLoading && (
+          <div className="flex min-h-screen items-center justify-center">
+            <Loader2 className="mx-auto animate-spin text-gray-400" size={64} />
+          </div>
+        )}
+        {isError && (
+          <div className="flex min-h-screen items-center justify-center">
+            <p className="text-gray-400">Error</p>
+          </div>
+        )}
+      </div>
       {/* paginator */}
       {!isLoading && numberOfPages && numberOfPages > 1 ? (
         <div
@@ -64,6 +69,6 @@ export default function TaskViewer() {
           </Button>
         </div>
       ) : null}
-    </div>
+    </>
   );
 }
