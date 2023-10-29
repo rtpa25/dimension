@@ -39,12 +39,12 @@ const DatePicker: React.FC<DatePickerProps> = ({ onSetDate, currentDate }) => {
         </Button>
       </PopoverTrigger>
       <PopoverContent
-        className="w-auto rounded-xl p-0"
+        className="w-auto rounded-lg p-0"
         style={gtWalsheim.style}
       >
         <Calendar
           mode="single"
-          className=""
+          className="text-text-default"
           selected={currentDate}
           onSelect={(data) => {
             if (data) onSetDate(data);

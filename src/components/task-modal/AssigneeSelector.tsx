@@ -14,7 +14,7 @@ const AssigneeSelector: FC<AssigneeSelectorProps> = ({ onSelect, value }) => {
       options={Object.values(UserNames).map((assignee) => {
         return {
           label: (
-            <div className="flex items-center gap-1 rounded-xl py-1.5">
+            <div className="flex items-center gap-1 rounded-lg py-1.5">
               <Avatar />
               <p className="text-xs text-text-default">{assignee}</p>
             </div>

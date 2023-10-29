@@ -58,8 +58,8 @@ const Combobox: React.FC<ComboBoxProps> = ({
             : initialButtonText}
         </Button>
       </PopoverTrigger>
-      <PopoverContent className="w-[200px] rounded-xl p-0">
-        <Command className="rounded-xl">
+      <PopoverContent className="w-[200px] rounded-lg p-0">
+        <Command className="rounded-lg">
           <CommandInput
             className="text-text-default placeholder:text-text-default"
             placeholder="Search Option..."
@@ -72,7 +72,7 @@ const Combobox: React.FC<ComboBoxProps> = ({
               <CommandItem
                 key={option.value}
                 value={option.value}
-                className="cursor-pointer rounded-lg"
+                className="cursor-pointer"
                 onSelect={() => {
                   if (!isMultiSelect) setOpen(false);
                   onSelect?.(option.value);
