@@ -43,7 +43,7 @@ const PrioritySelector: FC<PrioritySelectorProps> = ({ onSelect, value }) => {
       initialButtonText={
         <div className="flex items-center gap-1">
           <Priority />
-          <p className="text-xs text-text-default">Priority</p>
+          <p className="text-xs font-light text-text-default">Priority</p>
         </div>
       }
       currentSingleOption={value}

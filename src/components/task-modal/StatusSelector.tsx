@@ -47,7 +47,7 @@ const StatusSelector: FC<StatusSelectorProps> = ({ onSelect, value }) => {
       initialButtonText={
         <div className="flex items-center gap-1">
           <Ellipse />
-          <p className="text-xs text-text-default">Todo</p>
+          <p className="text-xs font-light text-text-default">Todo</p>
         </div>
       }
       currentSingleOption={value}

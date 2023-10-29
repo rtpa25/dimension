@@ -27,9 +27,13 @@ const DatePicker: React.FC<DatePickerProps> = ({ onSetDate, currentDate }) => {
             !currentDate && "text-muted-foreground",
           )}
         >
-          <div className="text-text-default flex items-center gap-1 text-xs font-medium">
+          <div className="flex items-center gap-1 text-xs font-light text-text-default">
             <CalendarIcon />
-            {currentDate ? format(currentDate, "PPP") : <span>Due Date</span>}
+            {currentDate ? (
+              format(currentDate, "PPP")
+            ) : (
+              <span className="">Due Date</span>
+            )}
           </div>
         </Button>
       </PopoverTrigger>
