@@ -299,7 +299,7 @@ export default function AddTaskModal() {
           </div>
 
           <Button
-            disabled={!isDirty}
+            disabled={!isDirty ?? submittingTask}
             onClick={submitTaskHandler}
             className="rounded-lg"
             style={{
