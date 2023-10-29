@@ -5,6 +5,7 @@ import { Search } from "lucide-react";
 
 import { cn } from "~/lib/utils";
 import { Dialog, DialogContent } from "~/components/ui/dialog";
+import { gtWalsheim } from "~/styles/fonts";
 
 const Command = React.forwardRef<
   React.ElementRef<typeof CommandPrimitive>,
@@ -13,9 +14,10 @@ const Command = React.forwardRef<
   <CommandPrimitive
     ref={ref}
     className={cn(
-      "flex h-full w-full flex-col overflow-hidden rounded-md bg-popover font-sans text-popover-foreground",
+      "flex h-full w-full flex-col overflow-hidden rounded-md bg-popover text-popover-foreground",
       className,
     )}
+    style={gtWalsheim.style}
     {...props}
   />
 ));

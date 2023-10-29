@@ -9,6 +9,7 @@ import {
   PopoverTrigger,
 } from "~/components/ui/popover";
 import CalendarIcon from "../icons/Calendar";
+import { gtWalsheim } from "~/styles/fonts";
 
 interface DatePickerProps {
   currentDate?: Date;
@@ -37,7 +38,7 @@ const DatePicker: React.FC<DatePickerProps> = ({ onSetDate, currentDate }) => {
           </div>
         </Button>
       </PopoverTrigger>
-      <PopoverContent className="w-auto p-0">
+      <PopoverContent className="w-auto p-0" style={gtWalsheim.style}>
         <Calendar
           mode="single"
           selected={currentDate}

@@ -15,6 +15,7 @@ import {
   PopoverTrigger,
 } from "~/components/ui/popover";
 import { cn } from "~/lib/utils";
+import { gtWalsheim } from "~/styles/fonts";
 
 interface ComboBoxProps {
   options: {
@@ -58,12 +59,7 @@ const Combobox: React.FC<ComboBoxProps> = ({
             : initialButtonText}
         </Button>
       </PopoverTrigger>
-      <PopoverContent
-        className="w-[200px] p-0"
-        style={{
-          fontFamily: "inherit",
-        }}
-      >
+      <PopoverContent className="w-[200px] p-0">
         <Command>
           <CommandInput placeholder="Search Option..." />
           <CommandEmpty>
