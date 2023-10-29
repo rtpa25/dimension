@@ -84,7 +84,7 @@ export default function AddTaskModal() {
 
   const fetchTagsHandler = async () => {
     setGeneratingTags(true);
-    await fetchEventSource("/api/new", {
+    await fetchEventSource("/api/openai", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -174,7 +174,7 @@ export default function AddTaskModal() {
         <div className="inputs mb-5 px-4">
           <Textarea
             placeholder="Task title"
-            className="placeholder:text-text-default h-auto max-w-full text-base font-medium"
+            className="h-auto max-w-full text-base font-medium placeholder:text-text-default"
             ref={textAreaRef}
             value={watchTitle}
             onChange={(e) => {
@@ -214,14 +214,14 @@ export default function AddTaskModal() {
                   className="flex items-center gap-1 rounded-lg border border-dashed px-2 py-1.5"
                 >
                   {icon}
-                  <p className="text-text-default text-xs">{tag}</p>
+                  <p className="text-xs text-text-default">{tag}</p>
                 </div>
               );
             })}
             {watchProject && (
               <div className="flex items-center gap-1 rounded-lg border border-dashed px-2 py-1.5">
                 <Project />
-                <p className="text-text-default text-xs">{watchProject}</p>
+                <p className="text-xs text-text-default">{watchProject}</p>
               </div>
             )}
           </div>
