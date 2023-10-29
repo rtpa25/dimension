@@ -1,6 +1,6 @@
 import { type Editor } from "@tiptap/react";
 import { type FC } from "react";
-import { Button } from "../ui/button";
+import { useForm } from "react-hook-form";
 import {
   Bold,
   Clip,
@@ -13,12 +13,28 @@ import {
   Tasks,
   UnOrderedList,
 } from "../icons";
+import { Button } from "../ui/button";
 
 interface EditorButtonGroupProps {
   editor: Editor | null;
 }
 
 const EditorButtonGroup: FC<EditorButtonGroupProps> = ({ editor }) => {
+  const {
+    watch,
+    setValue,
+    reset,
+    formState: { isDirty },
+  } = useForm<{
+    link: string;
+    displayText: string;
+  }>({
+    defaultValues: {
+      link: "",
+      displayText: "",
+    },
+  });
+
   return (
     <>
       <Button variant={"ghost"} size={"icon"}>
@@ -64,7 +80,7 @@ const EditorButtonGroup: FC<EditorButtonGroupProps> = ({ editor }) => {
         variant={"ghost"}
         size={"icon"}
         className={`${editor?.isActive("link") ? "bg-[#533BE520]" : ""}`}
-        onClick={() =>
+        onClick={() => {
           editor
             ?.chain()
             .focus()
@@ -73,11 +89,12 @@ const EditorButtonGroup: FC<EditorButtonGroupProps> = ({ editor }) => {
               target: "_blank",
               rel: "noopener noreferrer",
             })
-            .run()
-        }
+            .run();
+        }}
       >
         <Link />
       </Button>
+
       <Button
         variant={"ghost"}
         size={"icon"}

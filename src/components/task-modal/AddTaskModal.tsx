@@ -185,7 +185,7 @@ export default function AddTaskModal() {
           />
           <EditorContent
             editor={editor}
-            className="w-full px-3 py-2 text-sm font-medium focus:outline-none focus:ring-0"
+            className="w-full px-3 py-2 text-sm font-normal focus:outline-none focus:ring-0"
             placeholder="Describe this task..."
           />
         </div>

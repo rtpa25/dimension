@@ -16,7 +16,7 @@ const ProjectSelector: FC<ProjectSelectorProps> = ({ onSelect, value }) => {
           label: (
             <div className="flex items-center gap-1">
               <Project />
-              <p className="text-text-default text-xs">{project}</p>
+              <p className="text-xs text-text-default">{project}</p>
             </div>
           ),
           value: project,
@@ -26,7 +26,7 @@ const ProjectSelector: FC<ProjectSelectorProps> = ({ onSelect, value }) => {
       initialButtonText={
         <div className="flex items-center gap-1">
           <Project />
-          <p className="text-text-default text-xs">Project</p>
+          <p className="text-xs font-light text-text-default">Project</p>
         </div>
       }
       currentSingleOption={value}
