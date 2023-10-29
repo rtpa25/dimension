@@ -5,14 +5,14 @@ import { Project, Tag } from "~/utils/constants";
 
 export const runtime = "edge";
 
-export async function POST(req: NextRequest) {
+export default async function runAnalysisHandler(req: NextRequest) {
   const body = await req.json();
   const encoder = new TextEncoder();
   const stream = new TransformStream();
   const writer = stream.writable.getWriter();
 
   if (!body.taskTitle || !body.taskDescription) {
-    return new Response(JSON.stringify({ error: "Bad Request" }), {
+    return new NextResponse(JSON.stringify({ error: "Bad Request" }), {
       status: 400,
       headers: { "Content-Type": "application/json" },
     });
@@ -27,12 +27,12 @@ export async function POST(req: NextRequest) {
 
   try {
     const template = `
-    Take this task with title: {title} and {description}. Now your job is giving me a set of tags that and relevant projects this task can be a part of. You are only allowed to choose between a specified set of tags which are ${Object.values(
-      Tag,
-    ).join(", ")} and projects which are ${Object.values(Project).join(
-      ", ",
-    )}. You can also choose to not assign any tags or projects, if according to you task is not relevant. And I want no other text with the response just an object with keys tags and positions whose values will be array containing the relevant tags and projects you think are valid. 
-  `;
+      Take this task with title: {title} and {description}. Now your job is giving me a set of tags that and relevant projects this task can be a part of. You are only allowed to choose between a specified set of tags which are ${Object.values(
+        Tag,
+      ).join(", ")} and projects which are ${Object.values(Project).join(
+        ", ",
+      )}. You can also choose to not assign any tags or projects, if according to you task is not relevant. And I want no other text with the response just an object with keys tags and positions whose values will be array containing the relevant tags and projects you think are valid. 
+    `;
 
     const prompt = new PromptTemplate({
       template: template,
