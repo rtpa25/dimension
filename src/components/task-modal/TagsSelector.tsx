@@ -16,7 +16,7 @@ const TagsSelector: FC<TagsSelectorProps> = ({ onSelect, value }) => {
         const icon = getTagIcons(tag);
         return {
           label: (
-            <div className="flex items-center gap-1">
+            <div className="flex items-center gap-1 rounded-xl py-1.5">
               {icon}
               <p className="text-xs text-text-default">{tag}</p>
             </div>

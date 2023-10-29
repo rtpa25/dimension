@@ -31,7 +31,7 @@ const PrioritySelector: FC<PrioritySelectorProps> = ({ onSelect, value }) => {
         }
         return {
           label: (
-            <div className="flex items-center gap-1">
+            <div className="flex items-center gap-1 rounded-xl py-1.5">
               {icon}
               <p className="text-xs text-text-default">{priority}</p>
             </div>

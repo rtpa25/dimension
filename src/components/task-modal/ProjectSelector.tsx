@@ -14,7 +14,7 @@ const ProjectSelector: FC<ProjectSelectorProps> = ({ onSelect, value }) => {
       options={Object.values(ProjectEnum).map((project) => {
         return {
           label: (
-            <div className="flex items-center gap-1">
+            <div className="flex items-center gap-1 rounded-xl py-1.5">
               <Project />
               <p className="text-xs text-text-default">{project}</p>
             </div>

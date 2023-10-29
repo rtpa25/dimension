@@ -15,7 +15,6 @@ import {
   PopoverTrigger,
 } from "~/components/ui/popover";
 import { cn } from "~/lib/utils";
-import { gtWalsheim } from "~/styles/fonts";
 
 interface ComboBoxProps {
   options: {
@@ -59,9 +58,12 @@ const Combobox: React.FC<ComboBoxProps> = ({
             : initialButtonText}
         </Button>
       </PopoverTrigger>
-      <PopoverContent className="w-[200px] p-0">
-        <Command>
-          <CommandInput placeholder="Search Option..." />
+      <PopoverContent className="w-[200px] rounded-xl p-0">
+        <Command className="rounded-xl">
+          <CommandInput
+            className="text-text-default placeholder:text-text-default"
+            placeholder="Search Option..."
+          />
           <CommandEmpty>
             <p className="text-sm text-text-default">No options found</p>
           </CommandEmpty>
@@ -70,6 +72,7 @@ const Combobox: React.FC<ComboBoxProps> = ({
               <CommandItem
                 key={option.value}
                 value={option.value}
+                className="cursor-pointer rounded-lg"
                 onSelect={() => {
                   if (!isMultiSelect) setOpen(false);
                   onSelect?.(option.value);

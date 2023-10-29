@@ -37,7 +37,9 @@ const StatusSelector: FC<StatusSelectorProps> = ({ onSelect, value }) => {
           label: (
             <div className="flex items-center justify-start gap-1">
               {icon}
-              <p className="text-xs font-normal text-text-default">{status}</p>
+              <p className="rounded-xl py-1.5 text-xs font-normal text-text-default">
+                {status}
+              </p>
             </div>
           ),
           value: status,
